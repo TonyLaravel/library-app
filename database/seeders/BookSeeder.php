@@ -13,7 +13,7 @@ class BookSeeder extends Seeder
     {
         $response = Http::get('https://openlibrary.org/search.json', [
             'q' => 'subject:fiction',
-            'limit' => 100,
+            'limit' => 200,
             'fields' => 'key,title,author_name,first_publish_year,publisher,isbn,cover_i,subject,number_of_pages_median,first_sentence',
         ]);
 
@@ -75,8 +75,8 @@ class BookSeeder extends Seeder
             }
         }
 
-        // Randomly select 9 books to mark as featured
-        $randomBooks = collect($createdBooks)->random(min(9, count($createdBooks)));
+        // Randomly select 12 books to mark as featured
+        $randomBooks = collect($createdBooks)->random(min(12, count($createdBooks)));
         foreach ($randomBooks as $book) {
             $book->update(['featured' => true]);
         }

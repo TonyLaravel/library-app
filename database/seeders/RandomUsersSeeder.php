@@ -14,7 +14,6 @@ class RandomUsersSeeder extends Seeder
      */
     public function run(): void
     {
-        // make sure the roles exist on the enum / database column
         $roles = ['Librarian', 'Customer'];
 
         User::factory()->count(5)->create()->each(function (User $user) use ($roles) {

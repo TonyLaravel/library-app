@@ -2,6 +2,7 @@
 
 A demo library built with **Laravel 11**, **Inertia + Vue 3**, **Tailwind CSS / Flowbite** and MySQL.  
 Customers can browse, review and check-out books; librarians manage the catalogue and mark returns.
+Fully responsive and toggle button to switch between light & dark themes.
 
 ---
 
@@ -74,8 +75,10 @@ php artisan serve           # http://127.0.0.1:8000
 | **customer1@example.com**  | `password` | Customer  |
 | **customer2@example.com**  | `password` | Customer  |
 
-Plus **200 + books** with random ratings & comments. 
+Plus **200 books** with random ratings & comments. 
 Users are randomly assigned role.
+
+**Manual signup** - Manually user creation is supported as well.
 
 
 ## Running tests
