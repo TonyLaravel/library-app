@@ -11,9 +11,8 @@ Fully responsive and toggle button to switch between light & dark themes.
 2. [Quick start with Sail (recommended)](#quick-start-with-sail-recommended)  
 3. [Running without Sail](#running-without-sail)  
 4. [Default seed data](#default-seed-data)  
-5. [NPM scripts](#npm-scripts)  
-6. [Running tests](#running-tests)  
-9. [License](#license)
+5. [Running tests](#running-tests)  
+6. [License](#license)
 
 ---
 

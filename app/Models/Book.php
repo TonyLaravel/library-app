@@ -75,7 +75,7 @@ class Book extends Model
         return $this->hasOne(Loan::class)->whereNull('returned_at');
     }
 
-    /** `?search=foo` → WHERE title LIKE %foo%  */
+    /** `?search=foo` => WHERE title LIKE %foo%  */
     public function scopeSearch(Builder $query, ?string $term): Builder
     {
         return $term
