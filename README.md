@@ -1,8 +1,8 @@
 # 📚 Library App
 
 A demo library built with **Laravel 11**, **Inertia + Vue 3**, **Tailwind CSS / Flowbite** and MySQL.  
-Customers can browse, review and check-out books; librarians manage the catalogue and mark returns.
-Fully responsive and toggle button to switch between light & dark themes.
+Customers can browse, review and check-out books, while librarians manage the catalogue and mark returns.  
+Fully responsive, with a toggle for light / dark themes.
 
 ---
 
@@ -20,7 +20,7 @@ Fully responsive and toggle button to switch between light & dark themes.
 
 | Tool  | Version |
 |-------|---------|
-| Docker | Desktop 4 / CLI 🐳 |
+| Docker | Desktop 4 / CLI  |
 | Node   | ≥ 18 |
 | Git    | any |
 
@@ -30,19 +30,17 @@ Fully responsive and toggle button to switch between light & dark themes.
 
 ## Quick start with Sail (recommended)
 
-```bash
-git clone https://github.com/TonyLaravel/library-app.git
-cd library-app
-
-cp .env.example .env               # tweak ports or DB creds if needed
-./vendor/bin/sail up -d            # build + start containers
-./vendor/bin/sail composer install
-./vendor/bin/sail npm ci
-./vendor/bin/sail npm run dev    
-./vendor/bin/sail artisan migrate --seed
-
-open http://localhost              # app ready!
-```
+    git clone https://github.com/TonyLaravel/library-app.git
+    cd library-app
+    
+    cp .env.example .env               # tweak ports or DB creds if needed
+    ./vendor/bin/sail up -d            # build + start containers
+    ./vendor/bin/sail composer install
+    ./vendor/bin/sail npm ci
+    ./vendor/bin/sail npm run dev
+    ./vendor/bin/sail artisan migrate --seed
+    
+    open http://localhost              # app ready!
 
 ---
 
@@ -50,54 +48,55 @@ open http://localhost              # app ready!
 
 Already have PHP 8.3, Composer & MySQL locally?
 
-```bash
-git clone https://github.com/TonyLaravel/library-app.git
-cd library-app
-cp .env.example .env        # set DB_* to your local DB
-
-composer install
-npm ci && npm run dev     
-
-php artisan key:generate
-php artisan migrate --seed
-
-php artisan serve           # http://127.0.0.1:8000
-```
+    git clone https://github.com/TonyLaravel/library-app.git
+    cd library-app
+    cp .env.example .env        # set DB_* to your local DB
+    
+    composer install
+    npm ci && npm run dev
+    
+    php artisan key:generate
+    php artisan migrate --seed   # needs internet to fetch book data
+    
+    php artisan serve            # http://127.0.0.1:8000
 
 ---
 
 ## Default seed data
 
+### Users
+
 | Email | Password | Role |
 |-------|----------|------|
-| **librarian1@example.com** | `password` | Librarian | 
+| **librarian1@example.com** | `password` | Librarian |
 | **customer1@example.com**  | `password` | Customer  |
 | **customer2@example.com**  | `password` | Customer  |
 
-Plus **200 books** with random ratings & comments. 
-Users are randomly assigned role.
+*(You can also register new accounts manually.)*
 
-**Manual signup** - Manual user creation is supported as well.
+### Books  
 
+`BookSeeder` calls the **Open Library** API and inserts ≈ 200 random fiction titles.  
+Twelve are flagged **featured**. All start *Available*; loans update that status.
+
+*(You can also add books manually.)*
+
+---
 
 ## Running tests
 
-```bash
-# via Sail
-./vendor/bin/sail artisan test
+Via Sail:
 
-# or native
-php artisan test
-```
+    ./vendor/bin/sail artisan test
 
-**Feature coverage**
+Or natively:
 
-* Book CRUD & authorisation  
-* Comments & ratings  
-* Profile update / delete  
+    php artisan test
+
+> Feature coverage: Book CRUD & role gates  • Comments & ratings • Profile update / delete
 
 ---
 
 ## License
 
-Released under the **MIT** license – free for personal & commercial use. Enjoy!
+Released under the **MIT** license – free for personal & commercial use. Enjoy! 🎉
