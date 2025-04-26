@@ -37,6 +37,12 @@ class BookController extends Controller
         $averageRating = $book->ratings->avg('value') ?: 0;
         $ratingCount = $book->ratings->count();
 
+        $userRating = auth()->check()
+               ? $book->ratings()
+               ->where('user_id', auth()->id())
+               ->value('value')           // returns int|null
+        : null;
+
         return Inertia::render('Book', [
             'book' => [
                 'id' => $book->id,
@@ -60,6 +66,7 @@ class BookController extends Controller
                 ]),
                 'average_rating' => round($averageRating, 1),
                 'rating_count' => $ratingCount,
+                'user_rating'      => $userRating,
             ],
         ]);
     }

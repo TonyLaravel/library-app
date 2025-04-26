@@ -14,7 +14,7 @@ function destroy(id) {
 <template>
   <AppLayout title="Manage Books">
     <div class="mx-auto max-w-screen-xl p-6">
-      <!-- header bar -->
+      <!-- header -->
       <div class="mb-6 flex items-center justify-between">
         <h1 class="text-3xl font-semibold">Manage Books</h1>
 

@@ -8,7 +8,7 @@ const { book, auth } = defineProps({
 });
 
 const commentForm = useForm({ content: '' });
-const ratingForm = useForm({ value: 0 });
+const ratingForm = useForm({ value: book.user_rating ?? 0 })
 const hoverRating = ref(0);
 
 const setHover = n => (hoverRating.value = n);

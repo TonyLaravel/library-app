@@ -78,7 +78,7 @@ php artisan serve           # http://127.0.0.1:8000
 Plus **200 books** with random ratings & comments. 
 Users are randomly assigned role.
 
-**Manual signup** - Manually user creation is supported as well.
+**Manual signup** - Manual user creation is supported as well.
 
 
 ## Running tests
